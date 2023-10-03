@@ -1,0 +1,7 @@
+{
+  "name": "cs-splash-android",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
