@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
     setTimeout(async () => {
       await SplashScreen.hide();
       await StatusBar.show();
+      await StatusBar.setOverlaysWebView({ overlay: false });
     }, 5000);
   }
 
