@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { SplashScreen } from '@capacitor/splash-screen';
+import { StatusBar, Style } from '@capacitor/status-bar';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,16 @@ import { SplashScreen } from '@capacitor/splash-screen';
   standalone: true,
   imports: [IonicModule],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor() {
     setTimeout(async () => {
       await SplashScreen.hide();
+      await StatusBar.show();
     }, 5000);
+  }
+
+  async ngOnInit() {
+    await StatusBar.setOverlaysWebView({ overlay: true });
+    await StatusBar.hide();
   }
 }
